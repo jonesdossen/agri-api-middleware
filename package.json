@@ -1,0 +1,27 @@
+{
+  "name": "agri-api-middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejaygbay/agri-api-middleware.git"
+  },
+  "author": "Emmanuel Jaygbay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejaygbay/agri-api-middleware/issues"
+  },
+  "homepage": "https://github.com/ejaygbay/agri-api-middleware#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "form-data": "^4.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
