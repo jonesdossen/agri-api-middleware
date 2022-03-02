@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 const axios = require('axios');
 const FormData = require('form-data');
-const formData = new FormData();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -14,6 +13,7 @@ let URL = "https://demo.agrotraderlatex.online/api/login";
 
 app.get('/', (req, res) => res.send("Agri API Middleware"))
 app.post('/api/v1/login', (req, res) => {
+    const formData = new FormData();
     let username = req.body.username;
     let password = req.body.password;
 
