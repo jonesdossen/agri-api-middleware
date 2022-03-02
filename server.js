@@ -12,6 +12,7 @@ app.use(cors())
 
 let URL = "https://demo.agrotraderlatex.online/api/login";
 
+app.get('/', (req, res) => res.send("Agri API Middleware"))
 app.post('/api/v1/login', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
