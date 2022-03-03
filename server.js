@@ -42,7 +42,7 @@ const makeRequest = async(form_data) => {
 
 // get gangs and tapper
 
-app.post('/gangsAndTappers', (req, res) => {
+app.get('/gangsAndTappers', (req, res) => {
 
     makeRequests()
         .then(response => res.send(response))
