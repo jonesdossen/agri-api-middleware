@@ -11,8 +11,11 @@ app.use(cors())
 
 let URL = "https://demo.agrotraderlatex.online/api/login";
 
+// get gangs
 let URL2 = "https://demo.agrotraderlatex.online/api/view_gangs";
 
+// get roles
+let URL3 = "https://demo.agrotraderlatex.online/api/view_roles";
 
 let weighBridgeBuyURL = "https://demo.agrotraderlatex.online/api/weigh_bridge/add_purchase";
 
@@ -56,6 +59,22 @@ const makeRequests = async() => {
         .then(res => res.data)
         .catch(err => err.response.data)
 }
+
+app.get('/roles', (req, res) => {
+
+    makeRoleRequests()
+        .then(response => res.send(response))
+        .catch(error => res.send(error))
+})
+
+const makeRoleRequests = async() => {
+    return await axios.get(URL3, {
+
+        })
+        .then(res => res.data)
+        .catch(err => err.response.data)
+}
+
 
 // Making post to weigh bridge buy section
 // app.post('/api/v1/weighBridgeBuy', (req, res) => {
