@@ -11,6 +11,9 @@ app.use(cors())
 
 let URL = "https://demo.agrotraderlatex.online/api/login";
 
+let URL2 = "https://demo.agrotraderlatex.online/api/view_gangs";
+
+
 let weighBridgeBuyURL = "https://demo.agrotraderlatex.online/api/weigh_bridge/add_purchase";
 
 app.get('/', (req, res) => res.send("Agri API Middleware"))
@@ -47,7 +50,7 @@ app.post('/gangsAndTappers', (req, res) => {
 })
 
 const makeRequests = async() => {
-    return await axios.get(URL, {
+    return await axios.get(URL2, {
 
         })
         .then(res => res.data)
