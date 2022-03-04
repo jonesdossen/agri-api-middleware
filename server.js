@@ -17,6 +17,8 @@ let URL2 = "https://demo.agrotraderlatex.online/api/view_gangs";
 // get roles
 let URL3 = "https://demo.agrotraderlatex.online/api/view_roles";
 
+let URL4 = "https://demo.agrotraderlatex.online/api/get_farmers";
+
 let weighBridgeBuyURL = "https://demo.agrotraderlatex.online/api/weigh_bridge/add_purchase";
 
 app.get('/', (req, res) => res.send("Agri API Middleware"))
@@ -60,6 +62,7 @@ const makeRequests = async() => {
         .catch(err => err.response.data)
 }
 
+// get roles
 app.get('/roles', (req, res) => {
 
     makeRoleRequests()
@@ -69,6 +72,23 @@ app.get('/roles', (req, res) => {
 
 const makeRoleRequests = async() => {
     return await axios.get(URL3, {
+
+        })
+        .then(res => res.data)
+        .catch(err => err.response.data)
+}
+
+// get farmers
+
+app.get('/farmers', (req, res) => {
+
+    makeFarmersRequests()
+        .then(response => res.send(response))
+        .catch(error => res.send(error))
+})
+
+const makeFarmersRequests = async() => {
+    return await axios.get(URL4, {
 
         })
         .then(res => res.data)
