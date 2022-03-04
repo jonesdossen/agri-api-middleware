@@ -81,11 +81,11 @@ app.post('/weighBridgeBuy', (req, res) => {
     const formData2 = new FormData();
     let date = req.body.date;
     let farmer = req.body.farmer;
-    let vehicalPlate = req.body.vehicalPlate;
-    let gross = req.body.gross;
-    let tare = req.body.tare;
-    let net = req.body.net;
-    let storage = req.body.storage;
+    let vehicalPlate = req.body.vehicalPlates;
+    let gross = req.body.grosses;
+    let tare = req.body.tares;
+    let net = req.body.nets;
+    let storage = req.body.storages;
 
     formData2.append('date', date);
     formData2.append('farmer', farmer);
@@ -107,8 +107,6 @@ const makeWeighRequest = async(form_data2) => {
         .then(res => res.data)
         .catch(err => err.response.data)
 }
-
-
 
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT ${PORT}`);
