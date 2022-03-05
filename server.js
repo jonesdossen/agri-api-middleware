@@ -99,31 +99,28 @@ const makeFarmersRequests = async() => {
 // Making post to weigh bridge buy section
 app.post('/weighBridgeBuy', (req, res) => {
     const formData2 = new FormData();
-    let farmerId = req.body.farmerId;
-    let vehicalPlate = req.body.vehicalPlates;
+    let farmer_id = req.body.farmer_id;
+    let vehical_plate = req.body.vehical_plates;
     let date = req.body.date;
-    let gross = req.body.grosses;
-    let grossTime = req.body.grossTime;
-    let tare = req.body.tares;
-    let tareTime = req.body.tareTime;
-    let net = req.body.nets;
-    let netTonage = req.body.netTonnage;
+    let gross_weight = req.body.grosses;
+    let gross_time = req.body.gross_time;
+    let tare_weight = req.body.tares;
+    let tare_time = req.body.tare_time;
+    let net_weight = req.body.nets;
+    let net_tonage = req.body.net_tonage;
     let storage = req.body.storages;
-    let formInitiazationTime = req.body.formInitiazationTime;
-    let purchaseNumbers = req.body.purchaseNumbers;
 
-    formData2.append('farmerId', farmerId);
-    formData2.append('vehicalPlate', vehicalPlate);
+    formData2.append('farmer_id', farmer_id);
+    formData2.append('vehical_plate', vehical_plate);
     formData2.append('date', date);
-    formData2.append('gross', gross);
-    formData2.append('grossTime', grossTime);
-    formData2.append('tare', tare);
-    formData2.append('tareTime', tareTime);
-    formData2.append('net', net);
-    formData2.append('netTonage', netTonage);
+    formData2.append('gross_weight', gross_weight);
+    formData2.append('gross_time', gross_time);
+    formData2.append('tare_weight', tare_weight);
+    formData2.append('tare_time', tare_time);
+    formData2.append('net_weight', net_weight);
+    formData2.append('net_tonage', net_tonage);
+    formData2.append('purchaseBy', farmer_id);
     formData2.append('storage', storage);
-    formData2.append('formInitiazationTime', formInitiazationTime);
-    formData2.append('purchaseNumbers', purchaseNumbers);
 
     makeWeighRequest(formData2)
         .then(response => res.send(response))
