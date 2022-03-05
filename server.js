@@ -100,7 +100,7 @@ const makeFarmersRequests = async() => {
 app.post('/weighBridgeBuy', (req, res) => {
     const formData2 = new FormData();
     let farmer_id = req.body.farmer_id;
-    let vehical_plate = req.body.vehical_plate;
+    let vehicle_plate = req.body.vehicle_plate;
     let date = req.body.date;
     let gross_weight = req.body.gross_weight;
     let gross_time = req.body.gross_time;
@@ -111,7 +111,7 @@ app.post('/weighBridgeBuy', (req, res) => {
     let storage = req.body.storage;
 
     formData2.append('farmer_id', farmer_id);
-    formData2.append('vehical_plate', vehical_plate);
+    formData2.append('vehical_plate', vehicle_plate);
     formData2.append('date', date);
     formData2.append('gross_weight', gross_weight);
     formData2.append('gross_time', gross_time);
