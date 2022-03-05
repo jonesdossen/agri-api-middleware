@@ -100,15 +100,15 @@ const makeFarmersRequests = async() => {
 app.post('/weighBridgeBuy', (req, res) => {
     const formData2 = new FormData();
     let farmer_id = req.body.farmer_id;
-    let vehical_plate = req.body.vehical_plates;
+    let vehical_plate = req.body.vehical_plate;
     let date = req.body.date;
-    let gross_weight = req.body.grosses;
+    let gross_weight = req.body.gross_weight;
     let gross_time = req.body.gross_time;
-    let tare_weight = req.body.tares;
+    let tare_weight = req.body.tare_weight;
     let tare_time = req.body.tare_time;
-    let net_weight = req.body.nets;
+    let net_weight = req.body.net_weight;
     let net_tonage = req.body.net_tonage;
-    let storage = req.body.storages;
+    let storage = req.body.storage;
 
     formData2.append('farmer_id', farmer_id);
     formData2.append('vehical_plate', vehical_plate);
