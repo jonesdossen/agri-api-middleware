@@ -111,7 +111,7 @@ app.post('/weighBridgeBuy', (req, res) => {
     let storage = req.body.storage;
 
     formData2.append('farmer_id', farmer_id);
-    formData2.append('vehical_plate', vehicle_plate);
+    formData2.append('vehicle_plate', vehicle_plate);
     formData2.append('date', date);
     formData2.append('gross_weight', gross_weight);
     formData2.append('gross_time', gross_time);
