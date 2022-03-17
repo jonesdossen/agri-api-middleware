@@ -21,6 +21,8 @@ let URL4 = "https://demo.agrotraderlatex.online/api/get_farmers";
 
 let weighBridgeBuyURL = "https://demo.agrotraderlatex.online/api/weigh_bridge/add_purchase";
 
+let weighBridgeEstateURL = "https://demo.agrotraderlatex.online/api/weigh_bridge/add_estate_collection";
+
 app.get('/', (req, res) => res.send("Agri API Middleware"))
 app.post('/api/v1/login', (req, res) => {
     const formData = new FormData();
@@ -130,6 +132,46 @@ app.post('/weighBridgeBuy', (req, res) => {
 const makeWeighRequest = async(form_data2) => {
     return await axios.post(weighBridgeBuyURL, form_data2, {
             headers: form_data2.getHeaders()
+        })
+        .then(res => res.data)
+        .catch(err => err.response.data)
+}
+
+// Making post to weigh bridge estate section
+
+app.post('/weighBridgeEstate', (req, res) => {
+    const formData3 = new FormData();
+    let farmer_id = req.body.farmer_id;
+    let vehicle_plate = req.body.vehicle_plate;
+    let date = req.body.date;
+    let gross_weight = req.body.gross_weight;
+    let gross_time = req.body.gross_time;
+    let tare_weight = req.body.tare_weight;
+    let tare_time = req.body.tare_time;
+    let net_weight = req.body.net_weight;
+    let net_tonage = req.body.net_tonage;
+    let storage = req.body.storage;
+
+    formData2.append('farmer_id', farmer_id);
+    formData2.append('vehicle_plate', vehicle_plate);
+    formData2.append('date', date);
+    formData2.append('gross_weight', gross_weight);
+    formData2.append('gross_time', gross_time);
+    formData2.append('tare_weight', tare_weight);
+    formData2.append('tare_time', tare_time);
+    formData2.append('net_weight', net_weight);
+    formData2.append('net_tonage', net_tonage);
+    formData2.append('purchaseBy', farmer_id);
+    formData2.append('storage', storage);
+
+    makeWeighRequest(formData3)
+        .then(response => res.send(response))
+        .catch(error => res.send(error))
+
+})
+const makeWeighRequest = async(form_data3) => {
+    return await axios.post(weighBridgeEstateURL, form_data3, {
+            headers: form_data3.getHeaders()
         })
         .then(res => res.data)
         .catch(err => err.response.data)
